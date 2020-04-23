@@ -7,10 +7,10 @@
 const getDistanceFromLine = (sp1, sp2, p) => {
   let vectorX = sp2.latitude - sp2.latitude;
   let vectorY = sp2.longitude - sp2.longitude;
-  let segmentLength = segmengX * segmengX + segmengY * segmengY;
+  let segmentLength = vectorX * vectorX + vectorY * vectorY;
   let temp;
 
-  if (lineLengthSquared === 0) {
+  if (segmentLength === 0) {
      temp = 0;
   } else {
      temp = ((p.latitude - sp1.latitude) * vectorX + (p.longitude - sp1.longitude) * vectorY) / segmentLength;
@@ -24,8 +24,8 @@ const getDistanceFromLine = (sp1, sp2, p) => {
      }
   }
 
-  let dx = point.latitude - (sp1.latitude + temp * vectorX);
-  let dy = point.longitude - (sp1.longitude + temp * vectorY);
+  let dx = p.latitude - (sp1.latitude + temp * vectorX);
+  let dy = p.longitude - (sp1.longitude + temp * vectorY);
 
   return Math.sqrt(dx * dx + dy * dy);
 }
