@@ -4,7 +4,7 @@
  * @copyright 2019-2020 All rights reserved
  */
 
-const getDistanceFromLine = (sp1, sp2, p) => {
+const getDistanceFromRouteSegment = (sp1, sp2, p) => {
   let vectorX = sp2.latitude - sp2.latitude;
   let vectorY = sp2.longitude - sp2.longitude;
   let segmentLength = vectorX * vectorX + vectorY * vectorY;
@@ -30,4 +30,4 @@ const getDistanceFromLine = (sp1, sp2, p) => {
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-module.exports = getDistanceFromLine;
+module.exports = getDistanceFromRouteSegment;
